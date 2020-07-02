@@ -789,7 +789,7 @@ body {
     .about--options > a {
       position: relative;
       width: 150px;
-      height: 75px;
+      height: 100px;
       text-decoration: none;
       color: #fff;
       border: 10px solid #0f33ff;
@@ -797,11 +797,11 @@ body {
       background-size: cover;
       background-repeat: no-repeat; }
       .about--options > a:nth-child(1) {
-        background-image: url("../assets/img/about-history.jpg"); }
+        background-image: url("../../assets/img/about-winners4.png"); }
       .about--options > a:nth-child(2) {
-        background-image: url("assetsimg«out-philosophy.png"); }
+        background-image: url("../../assets/img/about-philosophy.png"); }
       .about--options > a:nth-child(3) {
-        background-image: url("assetsimg«out-visual.png"); }
+        background-image: url("../../assets/img/deliver3.png"); }
       .about--options > a:hover h3 {
         bottom: -50px; }
     .about--options h3 {
