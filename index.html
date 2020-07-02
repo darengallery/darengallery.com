@@ -86,7 +86,7 @@
                                         <li class="slider--item slider--item-left">
                                             <a href="#0">
                                                 <div class="slider--item-image">
-                                                    <img src="img\mediasm.png" alt="Victory">
+                                                    <img src="img\media.png" alt="Victory">
                                                 </div>
                                                 <p class="slider--item-title">images & media</p>
                                                 <p class="slider--item-description">Photoshop Illustrator Painter Publisher PremierPro</p>
@@ -179,8 +179,9 @@
                             <div class="hire" id="hire">
                                 <h2>You want us to...</h2>
                                 <!-- checkout formspree.io for easy form setup -->
-                                <form id="contact-form" method="post" action="/PHP/sendmail.php" role="form" class="work-request"><br>
-                                    <span class="options-a">
+                                <form class="work-request" method="post" action="PHP/sendmail.php" role="form">
+                                    <div class="work-request--options">
+                                        <span class="options-a">
                     <input id="opt-1" type="checkbox" value="web development">
                     <label for="opt-1">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -212,7 +213,7 @@
                       Web Amendments
                     </label>
                   </span>
-                                    <span class="options-b">
+                                        <span class="options-b">
                     <input id="opt-4" type="checkbox" value="hosting and server">
                     <label for="opt-4">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -244,32 +245,32 @@
                       printed media design and development
                     </label>
                   </span>
+                                    </div>
+                                    <div class="work-request--information">
+                                        <div class="information-name">
+                                            <input id="name" type="text" spellcheck="false">
+                                            <label for="name">Name</label>
+                                        </div>
+                                        <div class="information-email">
+                                            <input id="email" type="email" spellcheck="false">
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <input type="submit" value="Send Request">
+                                </form>
                             </div>
-                            <div class="work-request--information">
-                                <div class="information-name">
-                                    <input id="name" type="text" spellcheck="false">
-                                    <label for="name">Name</label>
-                                </div>
-                                <div class="information-email">
-                                    <input id="email" type="email" spellcheck="false">
-                                    <label for="email">Email</label>
-                                </div>
-                            </div>
-                            <input type="submit" value="Send Request">
-                            </form>
+                        </li>
+                    </ul>
                 </div>
-                </li>
-                </ul>
             </div>
         </div>
-    </div>
-    <ul class="outer-nav">
-        <li class="is-active">Home</li>
-        <li>Works</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Hire Me</li>
-    </ul>
+        <ul class="outer-nav">
+            <li class="is-active">Home</li>
+            <li>Works</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Hire Me</li>
+        </ul>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
