@@ -1,5 +1,11 @@
 <?php
 
+if (isset($_post['name'])) {
+    $name = $_POST['name'];
+}
+if (isset($_post['email'])) {
+    $email = $_POST['email'];
+}
 if (isset($_POST['development'])) {
     $development = $_POST['development'];
 }
@@ -22,7 +28,7 @@ if (isset($_POST['images'])) {
 if (isset($_POST['media'])) {
     $media = $_POST['media'];
 }
-$formcontent=" From: $name \n Phone: $phone \n maintenance Back: $maintenance \n amendments: $amendments \n hosting: $hosting \n images: $images \n media: $message";
+$formcontent=" From: $name \n Email: $email \n Web Maintenance: $maintenance \n Web Amendments: $amendments \n Hosting and Server: $hosting \n Images: $images \n Printed Media: $media";
 $recipient = "darengallery@gmail.com";
 $subject = "Contact Form";
 $mailheader = "From: $email \r\n";
