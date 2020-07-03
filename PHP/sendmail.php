@@ -15,7 +15,7 @@ echo "<b>Please Select Atleast One Option.</b>";
 }
 }
 $formcontent=" From: $name \n Email: $email \n";
-$recipient = "darengallery@gmail.com";
+$recipient = "daren_gallery@hotmail.com";
 $subject = "Contact Form";
 $mailheader = "From: $email \r\n";
 mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
