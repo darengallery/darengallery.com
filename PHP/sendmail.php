@@ -1,19 +1,19 @@
 <?php
 $name = $_POST['name'];
 $email = $_POST['email'];
-$opt-1 = $_POST['development'];
-$opt-2= $_POST['maintenance'];
-$opt-3 = $_POST['amendments'];
-$opt-4 = $_POST['hosting'];
-$opt-5 = $_POST['images'];
-$opt-6 = $_POST['media'];
+$development = $_POST['development'];
+$maintenance= $_POST['maintenance'];
+$amendments = $_POST['amendments'];
+$hosting = $_POST['hosting'];
+$image = $_POST['images'];
+$media = $_POST['media'];
 
 
-$formcontent=" From: $name \n Senders Name: $email \n Email:  $opt-1 \n Web Development $opt-2 \n Web Maintenance $opt-3 \n Web Amendments $opt-4 \n Hosting and Servers $opt-5 \n Images and Media $opt-6 \n Printed Media";
+$formcontent=" From: $name \n Senders Name: $email \n Email:  $development \n Web Development $maintenance \n Web Maintenance $amendments \n Web Amendments $hosting \n Hosting and Servers $images \n Images and Media $Media \n Printed Media";
 $recipient = "darengallery@gmail.com";
 $subject = "Contact Form";
 $mailheader = "From: $email \r\n";
 mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-header('Location: http://www.darengallery.com/thank_you.html');
+header('Location: http://www.darengallery.co.uk/php/thank_you.html');
 exit;
 ?>
