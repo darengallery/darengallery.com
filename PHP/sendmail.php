@@ -2,6 +2,8 @@
 $name = $_POST['name'];
 $email = $_POST['email'];
 
+$check_value = isset($_POST['opt-1']) ? 1 : 0;
+
 $formcontent="From: $name \n Email: $email";
 $recipient = "daren_gallery@hotmail.com";
 $subject = "Contact Form";
