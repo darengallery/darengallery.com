@@ -1,29 +1,13 @@
 <?php
 $name = $_POST['name'];
 $email = $_POST['email'];
-
-if(isset($_POST["form_development"]))
-{
-  echo "Web Development";
-}
-if(isset($_POST["form_amendments"]))
-{
-  echo "Web Amendments";
-}
-if(isset($_POST["form_hosting"]))
-{
-  echo "Hosting and Servers";
-}
-if(isset($_POST["form_images"]))
-{
-  echo "Images and Media";
-}
-if(isset($_POST["form_media"]))
-{
-  echo "Printed Media";
-}
-
-$formcontent=" From: $name \n Email: $email";
+$phone = $_POST['phone'];
+$call = $_POST['call'];
+$website = $_POST['website'];
+$priority = $_POST['priority'];
+$type = $_POST['type'];
+$message = $_POST['message'];
+$formcontent=" From: $name \n Phone: $phone \n Call Back: $call \n Website: $website \n Priority: $priority \n Type: $type \n Message: $message";
 $recipient = "daren_gallery@hotmail.com";
 $subject = "Contact Form";
 $mailheader = "From: $email \r\n";
