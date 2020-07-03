@@ -2,18 +2,15 @@
 $name = $_POST['name'];
 $email = $_POST['email'];
 $development = $_POST['development'];
-$maintenance= $_POST['maintenance'];
+$maintenance = $_POST['maintenance'];
 $amendments = $_POST['amendments'];
 $hosting = $_POST['hosting'];
-$image = $_POST['images'];
+$images = $_POST['images'];
 $media = $_POST['media'];
-
-
-$formcontent=" From: $name \n Senders Name: $email \n Email:  $development \n Web Development $maintenance \n Web Maintenance $amendments \n Web Amendments $hosting \n Hosting and Servers $images \n Images and Media $Media \n Printed Media";
+$formcontent=" From: $name \n Phone: $phone \n maintenance Back: $maintenance \n amendments: $amendments \n hosting: $hosting \n images: $images \n media: $message";
 $recipient = "darengallery@gmail.com";
 $subject = "Contact Form";
 $mailheader = "From: $email \r\n";
 mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-header('Location: http://www.darengallery.co.uk/thank_you.html');
-exit;
+echo "Thank You!" . " -" . "<a href='form.html' style='text-decoration:none;color:#ff0099;'> Return Home</a>";
 ?>
