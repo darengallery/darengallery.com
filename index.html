@@ -179,11 +179,11 @@
                             <div class="hire" id="hire">
                                 <h2>You want us to...</h2>
                                 <!-- checkout formspree.io for easy form setup -->
-                                <form action="/PHP/sendmail.php" role="form" class="work-request">
+                                <form class="work-request" action="/PHP/sendmail.php">
                                     <div class="work-request--options">
                                         <span class="options-a">
-                                            <label for="development">
-                    <input type="checkbox" id="development" name="development">
+                    <input id="development" type="checkbox" name="development">
+                    <label for="development">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                       viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
                       <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
@@ -192,8 +192,8 @@
                       </svg>
                       Web Development
                     </label>
-                    <label for="maintenance">
                     <input id="maintenance" type="checkbox" name="maintenance">
+                    <label for="maintenance">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                       viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
                       <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
@@ -214,8 +214,8 @@
                     </label>
                   </span>
                                         <span class="options-b">
-                    <label for="hosting">
                     <input id="hosting" type="checkbox" name="hosting">
+                    <label for="hosting">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                       viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
                       <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
@@ -224,8 +224,8 @@
                       </svg>
                       Hosting and server management
                     </label>
-                    <label for="image">
                     <input id="image" type="checkbox" name="image">
+                    <label for="image">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                       viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
                       <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
@@ -234,8 +234,8 @@
                       </svg>
                       Image and media adjustments
                     </label>
-                    <label for="media">
                     <input id="media" type="checkbox" name="media">
+                    <label for="media">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                       viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
                       <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
@@ -256,7 +256,7 @@
                                             <label for="email">Email</label>
                                         </div>
                                     </div>
-                                    <input type="submit" value="Send Request">
+                                    <input type="submit" value="Submit">
                                 </form>
                             </div>
                         </li>
