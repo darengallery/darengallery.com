@@ -1,14 +1,21 @@
 <?php
-$name = $_POST['name'];
-$email = $_POST['email'];
-if (isset($_POST['form_development']));
-if (isset($_POST['form_maintenance']));
-if (isset($_POST['form_amendments']));
-if (isset($_POST['form_hosting']));
-if (isset($_POST['form_images']));
-if (isset($_POST['form_media']));
-$formcontent=" From: $name \n Email: $email \n Maintenance: $form_maintenance \n Development: $form_development \n Amendments: $form_amendments \n Hosting: $form_hosting \n Images: $form_images \n $form_media";
-$recipient = "daren_gallery@hotmail.com";
+if(isset($_POST['submit'])){
+if(!empty($_POST['check_list'])) {
+// Counting number of checked checkboxes.
+$checked_count = count($_POST['check_list']);
+echo "You have selected following ".$checked_count." option(s): <br/>";
+// Loop to store and display values of individual checked checkbox.
+foreach($_POST['check_list'] as $selected) {
+echo "<p>".$selected ."</p>";
+}
+echo "<br/><b>Note :</b> <span>Similarily, You Can Also Perform CRUD Operations using These Selected Values.</span>";
+}
+else{
+echo "<b>Please Select Atleast One Option.</b>";
+}
+}
+$formcontent=" From: $name \n Email: $email \n";
+$recipient = "darengallery@gmail.com";
 $subject = "Contact Form";
 $mailheader = "From: $email \r\n";
 mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
