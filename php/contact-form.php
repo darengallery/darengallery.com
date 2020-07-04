@@ -17,6 +17,10 @@ if(isset($_POST['email'])) {
 			'val' => $_POST['email']
 		),
 		2 => array(
+			'text' => 'Subject',
+			'val' => $_POST['subject']
+		),
+		3 => array(
 			'text' => 'Message',
 			'val' => $_POST['message']
 		)
@@ -43,7 +47,8 @@ if(isset($_POST['email'])) {
 
 	$arrResult = array ('response'=>'error');
 	echo json_encode($arrResult);
-	echo '<a href="www.darengallery.co.uk/index.html">Back</a>';
 }
+ echo include_url('http://www.darengallery.co.uk/index.html'); 
 
 ?>
+echo "Thank You!" . " -" . "<a href='form.html' style='text-decoration:none;color:#ff0099;'> Return Home</a>";
