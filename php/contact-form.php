@@ -31,7 +31,7 @@ if(isset($_POST['email'])) {
 		$headers .= "MIME-Version: 1.0\r\n";
 		$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 		if (mail($to, $subject, $message, $headers)){
-			$arrResult = array ('response'=>'success');
+			$arrResult = array ('Thank You, youre email has been sent');
 		} else{
 			$arrResult = array ('response'=>'error');
 		}
