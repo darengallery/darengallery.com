@@ -33,7 +33,9 @@ if(isset($_POST['email'])) {
 		
 		if (mail($to, $subject, $message, $headers)){
 			$arrResult = array ('Thank You, youre email has been sent');
-		} else{
+		} 
+		else
+		{
 			$arrResult = array ('response'=>'error');
 		}
 	echo json_encode($arrResult);
@@ -41,5 +43,7 @@ if(isset($_POST['email'])) {
 
 	$arrResult = array ('response'=>'error');
 	echo json_encode($arrResult);
+	echo '<a href="www.darengallery.co.uk/index.html">Back</a>';
 }
+
 ?>
