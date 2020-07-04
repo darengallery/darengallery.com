@@ -2,7 +2,7 @@
 session_cache_limiter('nocache');
 header('Expires: ' . gmdate('r', 0));
 header('Content-type: application/json');
-$to = 'darengallery@gmail.com';
+$to = 'daren_gallery@hotmail.com';
 $subject = $_POST['subject'];
 if(isset($_POST['email'])) {
 	$name = $_POST['name'];
