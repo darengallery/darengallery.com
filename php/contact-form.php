@@ -32,7 +32,7 @@ if(isset($_POST['email'])) {
 		$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 		
 		if (mail($to, $subject, $message, $headers)){
-			echo "Thank You!" . " -" . "<a href='form.html' style='text-decoration:none;color:#ff0099;'> Return Home</a>";
+			$arrResult = array ('Thank You, youre email has been sent');
 		} else{
 			$arrResult = array ('response'=>'error');
 		}
