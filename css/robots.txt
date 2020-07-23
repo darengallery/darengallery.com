@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /daag.online/
+Disallow: /darengallery.com/
+Disallow: /gallerytest.online/
+Disallow: /gallerytest1.online/
