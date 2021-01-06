@@ -11,7 +11,7 @@
     <meta name="author" content="Daren gallery">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcMNyIaAAAAABC007PqLF-sEN0AR8QJ-fcOxE_N"></script>
 </head>
 
 <body>
@@ -180,7 +180,7 @@
                         <li class="l-section section">
                             <div class="hire">
                                 <h2 class="title"><strong>DaaG</strong></h2>
-                                <form id="contactForm" action="php/dgmail.php" method="POST">
+                                <form id="contactForm" action="php/myform.php" method="POST">
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-6">
@@ -214,8 +214,39 @@
                                             <input type="submit" value="send to DaaG" class="btn btn-primary btn-lg mb-xlg" />
                                         </div>
                                     </div>
-                                    <div class="g-recaptcha" data-sitekey="6LcMNyIaAAAAABC007PqLF-sEN0AR8QJ-fcOxE_N"></div>
                                 </form>
+                                <script>
+                                    // when form is submit
+                                    $('#comment_form').submit(function() {
+                                        // we stoped it
+                                        event.preventDefault();
+                                        var email = $('#email').val();
+                                        var comment = $("#comment").val();
+                                        // needs for recaptacha ready
+                                        grecaptcha.ready(function() {
+                                            // do request for recaptcha token
+                                            // response is promise with passed token
+                                            grecaptcha.execute('put your site key here', {
+                                                action: 'create_comment'
+                                            }).then(function(token) {
+                                                // add token to form
+                                                $('#comment_form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+                                                $.post("form.php", {
+                                                    email: email,
+                                                    comment: comment,
+                                                    token: token
+                                                }, function(result) {
+                                                    console.log(result);
+                                                    if (result.success) {
+                                                        alert('Thanks for posting comment.')
+                                                    } else {
+                                                        alert('You are spammer ! Get the @$%K out.')
+                                                    }
+                                                });
+                                            });;
+                                        });
+                                    });
+                                </script>
                             </div>
                         </li>
                     </ul>
