@@ -11,6 +11,7 @@
     <meta name="author" content="Daren gallery">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LefDCMaAAAAAMYUzSEQ9lR-fRbebI4UFHpFowPT"></script>
 </head>
 
 <body>
@@ -179,7 +180,7 @@
                         <li class="l-section section">
                             <div class="hire">
                                 <h2 class="title"><strong>DaaG</strong></h2>
-                                <form id="contactForm" action="php/contact-form.php" method="POST">
+                                <form id="contactForm" action="php/dgmail.php" method="POST">
                                     <div class="row">
                                         <div class="form-group">
                                             <div class="col-md-6">
@@ -213,6 +214,7 @@
                                             <input type="submit" value="send to DaaG" class="btn btn-primary btn-lg mb-xlg" />
                                         </div>
                                     </div>
+                                    <div class="g-recaptcha" data-sitekey="6LefDCMaAAAAAMYUzSEQ9lR-fRbebI4UFHpFowPT"></div>
                                 </form>
                                 <script>
                                     // when form is submit
@@ -225,7 +227,7 @@
                                         grecaptcha.ready(function() {
                                             // do request for recaptcha token
                                             // response is promise with passed token
-                                            grecaptcha.execute('6LfwIo4UAAAAADauXCK0Ke_jIWNSW-z49N-IUj43', {
+                                            grecaptcha.execute('6LefDCMaAAAAAFso5x5yeqAYN9OMBOrcz6LC8-L0', {
                                                 action: 'create_comment'
                                             }).then(function(token) {
                                                 // add token to form
