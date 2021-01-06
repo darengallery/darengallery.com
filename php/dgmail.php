@@ -7,7 +7,7 @@
     echo '<h2>Please check the the captcha form.</h2>';
     exit;
   }
-  $secretKey = "6LfM-SIaAAAAAHsYj5Xn5I6V9H6lRNGDwKP5Oy3f";
+  $secretKey = "";
   $ip = $_SERVER['REMOTE_ADDR'];
 
   // post request to server
