@@ -48,5 +48,6 @@ if(isset($_POST['email'])) {
 	$arrResult = array ('response'=>'error');
 	echo json_encode($arrResult);
 }
+
 ?>
 echo "Thank You!" . " -" . "<a href='form.html' style='text-decoration:none;color:#ff0099;'> Return Home</a>";
