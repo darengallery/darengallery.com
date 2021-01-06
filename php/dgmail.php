@@ -1,66 +1,33 @@
 <?php
+  $email;$comment;$captcha;
+  $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+  $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
+  $captcha = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
+  if(!$captcha){
+    echo '<h2>Please check the the captcha form.</h2>';
+    exit;
+  }
+  $secretKey = "6LfM-SIaAAAAAHsYj5Xn5I6V9H6lRNGDwKP5Oy3f";
+  $ip = $_SERVER['REMOTE_ADDR'];
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // post request to server
+  $url = 'https://www.google.com/recaptcha/api/siteverify';
+  $data = array('secret' => $secretKey, 'response' => $captcha);
 
-        // access
-        $secretKey = '6LcMNyIaAAAAAOCHSG_kssLRngTqhp_DxBMGcuRF';
-        $captcha = $_POST['g-recaptcha-response'];
-
-        if(!$captcha){
-          echo '<p class="alert alert-warning">Please check the the captcha form.</p>';
-          exit;
-        }
-
-        # FIX: Replace this email with recipient email
-        $mail_to = "darengallery@gmail.com";
-        
-        # Sender Data
-        $subject = trim($_POST["subject"]);
-        $name = str_replace(array("\r","\n"),array(" "," ") , strip_tags(trim($_POST["name"])));
-        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-        $phone = trim($_POST["phone"]);
-        $message = trim($_POST["message"]);
-        
-        if ( empty($name) OR !filter_var($email, FILTER_VALIDATE_EMAIL) OR empty($phone) OR empty($subject) OR empty($message)) {
-            # Set a 400 (bad request) response code and exit.
-            http_response_code(400);
-            echo '<p class="alert alert-warning">Please complete the form and try again.</p>';
-            exit;
-        }
-
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
-        $responseKeys = json_decode($response,true);
-
-        if(intval($responseKeys["success"]) !== 1) {
-          echo '<p class="alert alert-warning">Please check the the captcha form.</p>';
-        } else {
-            # Mail Content
-            $content = "Name: $name\n";
-            $content .= "Email: $email\n\n";
-            $content .= "Subject: $subject\n";
-            $content .= "Message:\n$message\n";
-
-            # email headers.
-            $headers = "From: $name <$email>";
-
-            # Send the email.
-            $success = mail($mail_to, $subject, $content, $headers);
-            if ($success) {
-                # Set a 200 (okay) response code.
-                http_response_code(200);
-                echo '<p class="alert alert-success">Thank You! Your message has been sent.</p>';
-            } else {
-                # Set a 500 (internal server error) response code.
-                http_response_code(500);
-                echo '<p class="alert alert-warning">Oops! Something went wrong, we couldnt send your message.</p>';
-            }
-        }
-
-    } else {
-        # Not a POST request, set a 403 (forbidden) response code.
-        http_response_code(403);
-        echo '<p class="alert alert-warning">There was a problem with your submission, please try again.</p>';
-    }
-
+  $options = array(
+    'http' => array(
+      'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+      'method'  => 'POST',
+      'content' => http_build_query($data)
+    )
+  );
+  $context  = stream_context_create($options);
+  $response = file_get_contents($url, false, $context);
+  $responseKeys = json_decode($response,true);
+  header('Content-type: application/json');
+  if($responseKeys["success"]) {
+    echo json_encode(array('success' => 'true'));
+  } else {
+    echo json_encode(array('success' => 'false'));
+  }
 ?>

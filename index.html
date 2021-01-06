@@ -227,12 +227,12 @@
                                         grecaptcha.ready(function() {
                                             // do request for recaptcha token
                                             // response is promise with passed token
-                                            grecaptcha.execute('put your site key here', {
+                                            grecaptcha.execute('6LfwIo4UAAAAADauXCK0Ke_jIWNSW-z49N-IUj43', {
                                                 action: 'create_comment'
                                             }).then(function(token) {
                                                 // add token to form
                                                 $('#comment_form').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
-                                                $.post("form.php", {
+                                                $.post("form_v3.php", {
                                                     email: email,
                                                     comment: comment,
                                                     token: token
